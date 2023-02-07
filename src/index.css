@@ -10,12 +10,12 @@
 
 body {
   margin: 0;
-  background-color: var(--charcoal);
+  background-color: var(--ocean-blue);
 }
 
 .title {
   text-align: center;
-  color: var(--ocean-blue);
+  color: var(--charcoal);
   font-size: 45px;
   margin-bottom: 15px;
 }

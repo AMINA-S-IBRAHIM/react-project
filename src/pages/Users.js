@@ -56,7 +56,9 @@ export const Users = () => {
   };
 
   return (
+    
     <Container className="app">
+      <AddUserForm/>
       <SuccessModal
         showSuccessModal={showSuccessModal}
         handleSuccessModalClose={handleSuccessModalClose}
