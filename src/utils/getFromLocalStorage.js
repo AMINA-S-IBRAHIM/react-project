@@ -1,9 +1,9 @@
-export const getFromLocalStorage = (key, defaultValue) => {
-  const dataFromLS = localStorage.getItem(key);
+export const getDataFromLocalStorage = (key, defaultValue) => {
+  const dataFromLocalStorage = JSON.parse(localStorage.getItem(key));
 
-  if (!dataFromLS) {
+  if (!dataFromLocalStorage) {
     return defaultValue;
   }
 
-  return JSON.parse(dataFromLS);
+  return dataFromLocalStorage;
 };
