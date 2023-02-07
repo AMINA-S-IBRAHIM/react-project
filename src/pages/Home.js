@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Form from "./Form";
-import { BannerCard } from "./BannerCard";
+import { BannerCard } from "./pages/BannerCard";
 
 const Home = () => {
   return (

@@ -1,54 +1,29 @@
+:root {
+  --charcoal: #282c34;
+  --ocean-blue: #61dafb;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--charcoal);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-input {
-  border: none;
-  box-shadow: 0px 0px 10px rgba(215, 180, 180, 0.4);
-  font-size: 1.2rem;
-  outline: none;
-  padding: 10px;
-  margin: 20px;
-  border: 2px solid transparent;
-  border-radius: 10px;
-}
-input:focus {
-  text-decoration: none;
-}
-input:focus-within {
-  border: 2px solid aqua;
-}
-.App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-button {
-  width: auto;
-  padding: 10px 30px;
-  margin: 10px;
-  border: 2px solid white;
-  box-shadow: 0px 0px 10px rgba(88, 145, 189, 0.4);
-  font-size: 1.2rem;
-  border-radius: 200px;
-  cursor: pointer;
-}
-button:active {
-  color: red;
-  background-color: antiquewhite;
-}
-td,
-th {
+.title {
   text-align: center;
+  color: var(--ocean-blue);
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.user-card {
+  width: 20rem;
+}
+
+.contact-link {
+  color: inherit;
 }

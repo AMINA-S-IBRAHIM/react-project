@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import { NavigationBar } from "./components/NavigationBar";
-import Users from "./components/Users.js";
-import Requests from "./components/Requests";
-import Outcomes from "./components/Outcomes";
-import Home from "./components/Home";
+import Users from "../pages/Users"
+import Requests from "./pages/Requests";
+import Outcomes from "./pages/Outcomes";
+import Home from "./pages/Home";
 
 function App() {
   return (
