@@ -1,22 +1,23 @@
 import React from 'react';
 import { Button, Table} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Users from './Users';
 import{Link, useNavigate} from 'react-router-dom';
-
+import { getFromLocalStorage } from '../getFromLocalStorage';
 
 function Home(){
+
     
     let history = useNavigate();
 
     const handleEdit=(Id,Name,Age,Gender,Email)=>{
-        localStorage.setItem('Name',Name);
-        localStorage.setItem('Age',Age);
-        localStorage.setItem('Gender',Gender);
-        localStorage.setItem('Email',Email);
-        localStorage.setItem('Id',Id);
+        localStorage.setinfo('Name',Name);
+        localStorage.setinfo('Age',Age);
+        localStorage.setinfo('Gender',Gender);
+        localStorage.setinfo('Email',Email);
+        localStorage.setinfo('Id',Id);
         
     }
+
 
     const handleDelete = (Id) =>{
         var index = Users.map(function(e){
@@ -49,25 +50,25 @@ function Home(){
                     </thead>
                     <tbody>
                         {
-                            Users && Users.length>0 
+                            Add && Add.length>0 
                             ?
-                            Users.map((item)=>{
+                            inputarr.map((info,ind)=>{
                                 return(
-                                    <tr>
-                                        <td>{item.Name}</td>
-                                        <td>{item.Age}</td>
-                                        <td>{item.Gender}</td>
-                                        <td>{item.Email}</td>
+                                    <tr key={ind}>
+                                        <td>{info.Name}</td>
+                                        <td>{info.Age}</td>
+                                        <td>{info.Gender}</td>
+                                        <td>{info.Email}</td>
                                         <td>
                                           <Link to={'/view'}>
-                                            <Button on onClick={() =>alert(item.Id)}>VIEW</Button>
+                                            <Button on onClick={() =>alert(info.Id)}>VIEW</Button>
                                             </Link>
                                             &nbsp;
                                             <Link to={'/edit'}>
-                                            <Button on onClick={() =>handleEdit(item.Id,item.Name,item.Age,item.Gender,item.Email)}>EDIT</Button>
+                                            <Button on onClick={() =>handleEdit(info.Id,info.Name,info.Age,info.Gender,info.Email)}>EDIT</Button>
                                             </Link>
                                             &nbsp;
-                                            <Button on onClick={() =>handleDelete(item.Id)}>DELETE</Button>
+                                            <Button on onClick={() =>handleDelete(info.Id)}>DELETE</Button>
                                           
                                         </td>
                                     </tr>

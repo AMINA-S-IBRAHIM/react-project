@@ -1,9 +1,8 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Form from "./Form";
 import { BannerCard } from "./BannerCard";
 
-const Home = () => {
+const MHome = () => {
   return (
     <div className="App">
       <Box>
@@ -25,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MHome;

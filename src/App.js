@@ -4,14 +4,14 @@ import { NavigationBar } from "./Main/NavigationBar";
 import Users from "./Main/Users.js";
 import Requests from "./Main/Requests";
 import Outcomes from "./Main/Outcomes";
-import Home from "./Main/Home";
+import MHome from "./Main/MHome";
 
 function App() {
   return (
     <div className="App">
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<MHome />} />
         <Route path="/Users" element={<Users />} />
         <Route path="/Requests" element={<Requests />} />
         <Route path="/Outcomes" element={<Outcomes />} />
