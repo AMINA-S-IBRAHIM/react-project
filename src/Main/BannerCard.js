@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 
+
 export const BannerCard = () => {
   return (
     <>
@@ -15,7 +16,8 @@ export const BannerCard = () => {
             Quote of the Day
           </Typography>
           <Typography variant="h5" component="div">
-            quote here
+          
+        
           </Typography>
         </CardContent>
         <CardActions>

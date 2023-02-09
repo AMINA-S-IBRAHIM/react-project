@@ -36,8 +36,8 @@ function Form() {
          <input type="text" autoComplete='off' name='Gender' value={inputdata.Gender} onChange={changehandle} placeholder="Gender"/><br/>
          <input type="text" autoComplete='off' name='Age' value={inputdata.Age} onChange={changehandle} placeholder="Age"/>
          <input type="text" autoComplete='off' name='Email' value={inputdata.Email} onChange={changehandle} placeholder="Email"/><br/>
-
-         <button onClick={handle}>Add </button><br/>
+<br/><br/>
+         <button onClick={handle}>Add </button><br/><br/>
          <button onClick={handle2}>check array in console </button><br/><br/>
         
          <table border={1} width="30%" cell padding={10}>
