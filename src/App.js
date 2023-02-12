@@ -2,9 +2,11 @@ import React from "react";
 import { Route, Routes } from "react-router";
 import { NavigationBar } from "./Main/NavigationBar";
 import Users from "./Main/Users.js";
-import Requests from "./Main/Requests";
-import Outcomes from "./Main/Outcomes";
+import About from "./Main/About";
+import Contact from "./Main/Contact";
 import MHome from "./Main/MHome";
+import Add from "./Main/Add";
+import View from "./Main/View";
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MHome />} />
         <Route path="/Users" element={<Users />} />
-        <Route path="/Requests" element={<Requests />} />
-        <Route path="/Outcomes" element={<Outcomes />} />
+        <Route path="/Create" element={<Add />} />
+        <Route path="/View" element={<View />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
     </div>
   );

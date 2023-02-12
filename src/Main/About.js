@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-const Requests= ()=>{
+const About= ()=>{
     return(
         <div className="App">Requests route</div>
     );
 };
 
-export default Requests;
+export default About;

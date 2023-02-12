@@ -10,22 +10,33 @@ const Add = () => {
   const [Age, setAge] = useState("");
   const [Gender, setGender] = useState("");
   const [Email, setEmail] = useState("");
+  const [validated, setValidated] = useState(false);
 
   const history = useNavigate();
+  
 
   const handleSubmit = (e) => {
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+      setValidated(true);
+      return;
+    }
+
     e.preventDefault();
+    setValidated(false);
 
     const id = uuid().slice(0, 8);
 
     Userlist.push({ id, Name, Age, Gender, Email });
 
-    history("/");
+    history("/Users");
   };
 
   return (
     <div>
-      <Form className="AddForm" style={{ margin: "15rem" }}>
+      <Form className="AddForm" style={{ margin: "15rem" }} noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formName">
           <Form.Control
             type="text"
@@ -36,7 +47,7 @@ const Add = () => {
         </Form.Group><br />
         <Form.Group className="mb-3" controlId="formAge">
           <Form.Control
-            type="text"
+            type="number"
             placeholder="Enter Age"
             required
             onChange={(e) => setAge(e.target.value)}
@@ -58,12 +69,10 @@ const Add = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group><br />
-        <Button onClick={handleSubmit} type="submit">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </Form>
     </div>
   );
 };
 
-export default Add;
+export default Add

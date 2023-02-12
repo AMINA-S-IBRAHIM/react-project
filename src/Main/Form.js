@@ -1,62 +1,64 @@
 import React from 'react';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Box from "@mui/material/Box";
+import '../index.css';
+import { getFromLocalStorage } from "../getFromLocalStorage";
 
 
 function Form() {
   const[inputarr,setInputarr]=useState([])
 
-  const [inputdata, SetInputdata]=useState({name:"",Gender:"",Age:"",Email:""})
-
+  const [inputdata, SetInputdata]=useState({Date:"",Request:"",Outcome:""})
+  
   function changehandle(e){
     SetInputdata({...inputdata,[e.target.name]:e.target.value})
     
   }
 
-  let{name,Gender,Age,Email}=inputdata;
+
+  let{Date,Request,Outcome}= inputdata;
 
   function handle(){
-    setInputarr([...inputarr,{name,Gender,Age,Email}])
-    
-    console.log(inputdata, "input data what we enter")
-    SetInputdata({name:"",Gender:"",Age:"",Email:""})
+      setInputarr([...inputarr,{Date,Request,Outcome}])
+
+      console.log(inputdata, "Data that has been input")
+      SetInputdata({Date:"",Request:"",Outcome:""})  
   }
 
   function handle2(){
     console.log("Object store in array",inputarr)
     
   }
+ 
 
   return(
          
-       <div className="App" >
+       <div  className='form' >
+        
         <Box>
           
-         <input type="text" autoComplete='off' name='name' value={inputdata.name} onChange={changehandle}  placeholder="Enter Name"/>
-         <input type="text" autoComplete='off' name='Gender' value={inputdata.Gender} onChange={changehandle} placeholder="Gender"/><br/>
-         <input type="text" autoComplete='off' name='Age' value={inputdata.Age} onChange={changehandle} placeholder="Age"/>
-         <input type="text" autoComplete='off' name='Email' value={inputdata.Email} onChange={changehandle} placeholder="Email"/><br/>
-<br/><br/>
-         <button onClick={handle}>Add </button><br/><br/>
+         <input type="Date" autoComplete='on' name='Date' value={inputdata.Date} onChange={changehandle}  placeholder="Enter Date"/>
+         <input type="text" autoComplete='on' name='Request' value={inputdata.Request} onChange={changehandle} placeholder="Enter Request"/>
+         <input type="text" autoComplete='on' name='Outcome' value={inputdata.Outcome} onChange={changehandle} placeholder="Enter Outcome"/>
+ <br/>
+         <button onClick={handle}>Add </button><br/>
          <button onClick={handle2}>check array in console </button><br/><br/>
         
-         <table border={1} width="30%" cell padding={10}>
+         <table border={2} width="70%" cell padding={30}>
           <tbody>
                <tr>
-                      <th>Name</th>
-                      <th>Gender</th>
-                      <th>Age</th>
-                      <th>Email</th>
+                      <th>Date</th>
+                      <th>Request</th>
+                      <th>Outcome</th>
                  </tr>
             {
               inputarr.map(
                 (info,ind)=>{
                        return(
                    <tr key={ind}>
-                     <td>{info.name}</td>
-                     <td>{info.Gender}</td>
-                     <td>{info.Age}</td>
-                     <td>{info.Email}</td>
+                     <td>{info.Date}</td>
+                     <td>{info.Request}</td>
+                     <td>{info.Outcome}</td>
                    </tr>
                    )
                 }

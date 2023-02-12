@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-const pages = ["Users", "Requests", "Outcomes"];
+const pages = ["Users", "About", "Contact"];
 const settings = ["Profile", "Account", "Logout"];
 
 export const NavigationBar = () => {

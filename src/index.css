@@ -28,7 +28,7 @@ input:focus {
 input:focus-within {
   border: 2px solid aqua;
 }
-.App {
+.form {
   display: flex;
   align-items: center;
   justify-content: center;

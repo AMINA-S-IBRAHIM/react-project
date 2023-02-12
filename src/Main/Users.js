@@ -3,20 +3,15 @@ import { Button, Table} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Userlist from './Userlist';
 import{Link, useNavigate} from 'react-router-dom';
+import {useEffect } from 'react';
+import { getFromLocalStorage } from "../getFromLocalStorage";
 
 
 function Users(){
     
+
     let history = useNavigate();
 
-    const handleEdit=(Id,Name,Age,Gender,Email)=>{
-        localStorage.setItem('Name',Name);
-        localStorage.setItem('Age',Age);
-        localStorage.setItem('Gender',Gender);
-        localStorage.setItem('Email',Email);
-        localStorage.setItem('Id',Id);
-        
-    }
 
     const handleDelete = (Id) =>{
         var index = Userlist.map(function(e){
@@ -26,6 +21,10 @@ function Users(){
         Userlist.splice(index,1);
 
         history('/');
+    }
+
+    const handleView = (Id,Name,Age,Gender,Email) =>{
+       
     }
 
     return(
@@ -59,14 +58,10 @@ function Users(){
                                         <td>{item.Gender}</td>
                                         <td>{item.Email}</td>
                                         <td>
-                                          <Link to={'/view'}>
-                                            <Button on onClick={() =>alert(item.Id)}>VIEW</Button>
+                                          <Link to={'/View'}>
+                                            <Button on onClick={() =>handleView(item.Id,item.Name,item.Age,item.Gender,item.Email)}>VIEW</Button>
                                             </Link>
-                                            &nbsp;
-                                            <Link to={'/edit'}>
-                                            <Button on onClick={() =>handleEdit(item.Id,item.Name,item.Age,item.Gender,item.Email)}>EDIT</Button>
-                                            </Link>
-                                            &nbsp;
+                                              &nbsp;
                                             <Button on onClick={() =>handleDelete(item.Id)}>DELETE</Button>
                                           
                                         </td>
