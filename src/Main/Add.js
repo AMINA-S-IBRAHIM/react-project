@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Userlist from './Userlist';
-import { v4 as uuid } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
@@ -27,7 +27,7 @@ const Add = () => {
     e.preventDefault();
     setValidated(false);
 
-    const id = uuid().slice(0, 8);
+    const id = uuidv4();
 
     Userlist.push({ id, Name, Age, Gender, Email });
 

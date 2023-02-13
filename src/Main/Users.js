@@ -5,7 +5,7 @@ import Userlist from './Userlist';
 import{Link, useNavigate} from 'react-router-dom';
 import {useEffect } from 'react';
 import { getFromLocalStorage } from "../getFromLocalStorage";
-
+import { v4 as uuidv4 } from "uuid";
 
 function Users(){
     
@@ -20,11 +20,15 @@ function Users(){
         
         Userlist.splice(index,1);
 
-        history('/');
+        history('/Users');
     }
-
+    
     const handleView = (Id,Name,Age,Gender,Email) =>{
-       
+        var show = Userlist.map(function(e){
+            return e.Id,e.Name,e.Age,e.Gender,e.Email
+        }).indexOf(Id);
+        
+        Userlist.push(show);
     }
 
     return(
