@@ -7,6 +7,7 @@ import Contact from "./Main/Contact";
 import MHome from "./Main/MHome";
 import Add from "./Main/Add";
 import View from "./Main/View";
+import { getFromLocalStorage } from "../getFromLocalStorage";
 
 function App() {
   return (
